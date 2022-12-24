@@ -1,12 +1,12 @@
 require('dotenv').config()
-let bodyParser = require('body-parse')
+const bodyParser = require('body-parse')
 
-let express = require('express');
-let app = express();
+const express = require('express');
+const app = express();
 
 app.use("/public", express.static(__dirname + '/public'))
 
-app.use(bodyParser.urlencoded({extended: false})).use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
 
 app.use("/", (req, res, next) => {
     console.log(req.method + " " + req.path + " - " + req.ip)
