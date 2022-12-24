@@ -1,8 +1,7 @@
 require('dotenv').config()
-const bodyParser = require('body-parse')
-
-const express = require('express');
-const app = express();
+var bodyParser = require('body-parse')
+var express = require('express');
+var app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
