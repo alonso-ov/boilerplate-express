@@ -13,6 +13,13 @@ app.use("/", (req, res, next) => {
     next()
 })
 
+app.post("/name", (req, res) => {
+    first = req.body.first
+    last  = req.body.last
+
+    res.json({"name": first + " " + last})
+})
+
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/views/index.html")
 })
